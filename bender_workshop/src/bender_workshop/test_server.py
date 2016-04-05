@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import rospy
-from std_srvs.srvs import Trigger
+from std_srvs.srv import Trigger, TriggerResponse, TriggerRequest
 
 def main():
   rospy.init_node('test_server')

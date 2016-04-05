@@ -38,6 +38,7 @@ $ touch __init__.py
 
 # Python node
 ```
+$ roscd bender_workshop/src/bender_workshop
 $ touch test.py
 $ chmod +x test.py
 ```
