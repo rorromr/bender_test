@@ -1,0 +1,10 @@
+<launch>
+  <arg name="use_gui" default="true" />
+
+  <!-- Load model -->
+  <param name="robot_description" command="$(find xacro)/xacro.py '$(find gazebo_test)/urdf/quad.urdf.xacro'" />
+
+  <!-- Open Rviz with robot model -->
+  <node if="$(arg use_gui)" name="rviz" pkg="rviz" type="rviz" output="screen" args="-d $(find gazebo_test)/config/quad_display.rviz"/>
+  
+</launch>

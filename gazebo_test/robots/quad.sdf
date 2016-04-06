@@ -1,0 +1,18 @@
+<sdf version='1.4'>
+  <model name='quad'>
+    <static>0</static>
+    <plugin name='quad_controller' filename='libgazebo_ros_quad.so'>
+      <robotNamespace>quad</robotNamespace>
+      <topicName>force</topicName>
+      <bodyName>base_link</bodyName>
+      <xyzOffset>0 0 0</xyzOffset>
+      <rpyOffset>0 -0 0</rpyOffset>
+    </plugin>
+    <link name='__default__'>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+    </link>
+  </model>
+</sdf>
