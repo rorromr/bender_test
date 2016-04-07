@@ -1,0 +1,13 @@
+<launch>
+  <!-- Joy device -->
+  <arg name="dev" default="/dev/input/js1"/>
+
+  <!-- Joy node -->
+  <node name="joy_gazebo" pkg="joy" type="joy_node" respawn="false" output="screen">
+    <param name="dev" value="$(arg dev)"/>
+  </node>
+
+  <!-- Joy wrench interface -->
+  <node name="joy_wrench_interface" pkg="gazebo_test" type="joy_wrench.py" respawn="false" output="screen" />
+  
+</launch>

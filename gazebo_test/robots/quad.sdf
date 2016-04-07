@@ -1,5 +1,60 @@
 <sdf version='1.4'>
   <model name='quad'>
+    <link name='base_link'>
+      <pose>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.8</mass>
+        <inertia>
+          <ixx>0.00866667</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00866667</iyy>
+          <iyz>0</iyz>
+          <izz>0.016</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_collision_quad'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.4 0.4 0.1</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='base_link_visual_quad'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.2</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay>
+        <linear>0</linear>
+        <angular>0</angular>
+      </velocity_decay>
+      <self_collide>0</self_collide>
+    </link>
     <static>0</static>
     <plugin name='quad_controller' filename='libgazebo_ros_quad.so'>
       <robotNamespace>quad</robotNamespace>
@@ -8,11 +63,5 @@
       <xyzOffset>0 0 0</xyzOffset>
       <rpyOffset>0 -0 0</rpyOffset>
     </plugin>
-    <link name='__default__'>
-      <velocity_decay>
-        <linear>0</linear>
-        <angular>0</angular>
-      </velocity_decay>
-    </link>
   </model>
 </sdf>
