@@ -114,8 +114,8 @@ void GazeboRosQuad::UpdateChild()
     boost::mutex::scoped_lock lock(this->lock_);
     math::Vector3 force(this->wrench_msg_.force.x,this->wrench_msg_.force.y,this->wrench_msg_.force.z);
     math::Vector3 torque(this->wrench_msg_.torque.x,this->wrench_msg_.torque.y,this->wrench_msg_.torque.z);
-    this->link_->AddForce(force);
-    this->link_->AddTorque(torque);
+    this->link_->AddRelativeForce(force);
+    this->link_->AddRelativeTorque(torque);
   }
 }
 
